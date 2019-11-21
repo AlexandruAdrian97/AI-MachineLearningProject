@@ -7,6 +7,7 @@ from collections import defaultdict
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import KFold
 from sklearn.neural_network import MLPClassifier
+from sklearn import svm
 import time
 
 start = time.time()
@@ -111,7 +112,7 @@ test_indices = np.arange(number_examples_train + number_examples_validation, len
 train_validation_indices = np.concatenate([train_indices, validation_indices])
 
 
-# VALIDATION
+# VALIDATION MLP
 
 classifier_MLP = MLPClassifier(hidden_layer_sizes=(300, 200), activation='tanh', solver='adam', alpha=0.001, max_iter=200)
 
@@ -123,7 +124,7 @@ print(f"Accuracy with MPL classifier on validation: {accuracy(predictions, label
 print('')
 
 
-# TEST
+# TEST MLP
 classifier_MLP.fit(data_bow[train_validation_indices, :], labels[train_validation_indices])
 
 predictions = classifier_MLP.predict(data_bow[test_indices])
@@ -148,8 +149,6 @@ for train_validation_indices, test_indices in cv.split(test_data_bow):
 print(f'The kfold cv score is: {np.mean(scores)}')
 
 
-
-
 # VALIDATION SVM:
 
 for C in [0.01, 0.1, 1, 10, 100]:
@@ -172,7 +171,6 @@ classifier_MLP.fit(data_bow[train_validation_indices, :], labels[train_validatio
 Prediction = classifier_MLP.predict(test_data_bow)
 end = time.time()
 
-get_submission_file("submisie_Kaggle_MLP_312.csv", Prediction, test_Id)
-
+get_submission_file("submisie_Kaggle", Prediction, test_Id)
 
 print('Time: ', int(end - start), 'seconds')
