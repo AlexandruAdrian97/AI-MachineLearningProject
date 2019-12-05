@@ -1,17 +1,18 @@
 # Artificial-Intelligence-ProjectML
 
-The program is written in Python and it is a project developed for the Artificial Intelligence course at the university.
+The program is written in Python and it is a project developed for the Artificial Intelligence course at University.
 
-You will need to have some texts translated from diffrent languages into english. I have a train data folder with over 2800 text examples for this to make it work better.
+I have a train data folder with over 2800 texts, translated from 11 different languages into English as examples.
 
-The program takes from the train data 80% of the texts and turn them into training data and the rest put them to test to see if it can make it right.
+The program takes from the train data 80% of the texts and turn them into training data and the other 20% is used for testing.
 
-I use two classifier for this program, Neural Networks (MLP) and SVM.
+After the training is done, the program will know the labels for each of the train data texts and the algorithm will take the most 20000 frequent words from all the train data texts and try to classify the test data based on what it learned.
 
-After the training it will know the labels for each of the train data text and it will take the most 20000 frequent words from them and try to classify the rest of 20%.
+I used two classifier for this program, Neural Networks(MLP) and SVM. The MLP scored a better accuracy therefore I choosed this classifier for the final result.
 
-I use a K-FOLD Cross-Validation to improve my accuracy.
+I used a K-FOLD Cross-Validation to improve my accuracy.
 
+Finally, the algorithm was able to get over 90% accuracy.
 
 
 
