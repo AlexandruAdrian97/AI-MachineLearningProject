@@ -8,7 +8,7 @@ The program takes from the train data 80% of the texts and turn them into traini
 
 After the training is done, the program will know the labels for each of the train data texts and the algorithm will take the most 20000 frequent words from all the train data texts and try to classify the test data based on what it learned.
 
-I used two classifier for this program, Neural Networks(MLP) and SVM. The MLP scored a better accuracy therefore I choosed this classifier for the final result.
+I used two classifier for this program, Neural Networks(MLP) and SVM. The MLP scored a better accuracy therefore I chose this classifier for the final result.
 
 I used a K-FOLD Cross-Validation to improve my accuracy.
 
